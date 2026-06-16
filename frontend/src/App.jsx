@@ -6,6 +6,7 @@ import Collaborations from './pages/Collaborations';
 import ClientForm from './pages/ClientForm';
 import CollaborationForm from './pages/CollaborationForm';
 import PrivateRoute from './components/PrivateRoute';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route element={<Layout />}>
-          <Route path='/' element={<PrivateRoute><div>Dashboard</div></PrivateRoute>} />
+          <Route path='/' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path='/clients' element={<PrivateRoute><Clients /></PrivateRoute>} />
           <Route path='/clients/new' element={<PrivateRoute><ClientForm /></PrivateRoute>} />
           <Route path='/collaborations' element={<PrivateRoute><Collaborations /></PrivateRoute>} />
