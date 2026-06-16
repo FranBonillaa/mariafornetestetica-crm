@@ -8,6 +8,8 @@ const RESPONSIBLES = ['Alicia', 'Marta', 'Alejandro'];
 
 
 function CollaborationForm() {
+
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const [form, setForm] = useState({
         brand_name: '', category: '', contact: '', status: '', responsible: '', notes: ''
@@ -21,6 +23,12 @@ function CollaborationForm() {
     //Se ejecuta al guardar
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!form.brand_name || !form.contact) {
+            setError('El nombre y el contacto no pueden estar vacíos');
+            return
+        }
+
         await api.post('/collaborations', form);
         navigate('/collaborations');
     }
@@ -44,6 +52,7 @@ function CollaborationForm() {
                     {RESPONSIBLES.map(r => <option key={r} value={r}>{r}</option>)}
                 </select>
                 <input name="notes" placeholder="Notas" onChange={handleChange} className="border rounded px-3 py-2 text-sm" />
+                {error && <p className="text-red-500 text-sm">{error}</p>}
                 <button type="submit" className="bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
                     Guardar
                 </button>
