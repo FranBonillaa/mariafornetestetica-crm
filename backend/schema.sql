@@ -1,8 +1,8 @@
--- SANTACRUZ CRM — Database schema
+-- MARIAFORNETESTETICA CRM — Database schema
 -- Run this script on Aiven (or local MySQL for development)
-CREATE DATABASE IF NOT EXISTS santacruz_crm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS mariafornetestetica_crm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE santacruz_crm;
+USE mariafornetestetica_crm;
 
 -- ─────────────────────────────────────────
 -- Table: client
@@ -38,32 +38,7 @@ CREATE TABLE IF NOT EXISTS client (
 );
 
 -- ─────────────────────────────────────────
--- Table: collaboration
--- ─────────────────────────────────────────
-CREATE TABLE IF NOT EXISTS collaboration (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  brand_name VARCHAR(150) NOT NULL,
-  category ENUM(
-    'Modelo',
-    'Hotel',
-    'Maquillaje',
-    'Localización',
-    'Otro'
-  ) NOT NULL,
-  contact VARCHAR(150) NOT NULL,
-  status ENUM(
-    'Contacto inicial',
-    'Interesado',
-    'Colaboración activa',
-    'En pausa'
-  ) NOT NULL DEFAULT 'Contacto inicial',
-  responsible ENUM('Alicia', 'Marta', 'Alejandro') NOT NULL,
-  notes TEXT DEFAULT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- ─────────────────────────────────────────
--- Table: user (SANTACRUZ team)
+-- Table: user (MARIAFORNETESTETICA team)
 -- Used for JWT login
 -- ─────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS user (

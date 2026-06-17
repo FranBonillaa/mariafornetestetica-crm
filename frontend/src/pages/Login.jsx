@@ -29,7 +29,7 @@ function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-                <h1 className="text-2xl font-bold text-center mb-6">SANTACRUZ</h1>
+                <h1 className="text-2xl font-bold text-center mb-6">MARIAFORNETESTETICA</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label className="block text-sm font-medium mb-1">Email</label>

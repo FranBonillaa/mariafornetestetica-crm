@@ -8,7 +8,6 @@ const cors = require('cors');
 //Importar rutas
 const authRoutes = require('./routes/auth');
 const clients = require('./routes/clients');
-const collaborations = require('./routes/collaborations');
 const authMiddleware = require('./middleware/auth');
 
 //Creacion aplicación Express
@@ -32,7 +31,6 @@ app.use('/api/auth', authRoutes);
 
 //Rutas privadas
 app.use('/api/clients', authMiddleware, clients);
-app.use('/api/collaborations', authMiddleware, collaborations);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
