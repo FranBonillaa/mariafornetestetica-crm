@@ -12,6 +12,8 @@ const appointments = require('./routes/appointments');
 const services = require('./routes/services');
 const packages = require('./routes/packages');
 const payments = require('./routes/payments');
+const categories = require('./routes/categories');
+const clientPackages = require('./routes/client-packages');
 const authMiddleware = require('./middleware/auth');
 
 //Creacion aplicación Express
@@ -38,6 +40,8 @@ app.use('/api/appointments', authMiddleware, appointments);
 app.use('/api/services', authMiddleware, services);
 app.use('/api/packages', authMiddleware, packages);
 app.use('/api/payments', authMiddleware, payments);
+app.use('/api/categories', authMiddleware, categories);
+app.use('/api/client-packages', authMiddleware, clientPackages);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
