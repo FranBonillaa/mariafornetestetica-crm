@@ -182,7 +182,7 @@ export class ServicesComponent {
     {
       category: 'Depilación Facial y Corporal',
       name: 'Depilación perianal',
-      price: null,
+      price: 5,
       image: this.PLACEHOLDER,
     },
     {
