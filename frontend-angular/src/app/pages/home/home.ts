@@ -4,6 +4,7 @@ import { HeroComponent } from '../../components/hero/hero';
 import { ServicesComponent } from '../../components/services/services';
 import { FeaturesComponent } from '../../components/features/features';
 import { PackagesComponent } from '../../components/packages/packages';
+import { ContactComponent } from '../../components/contact/contact';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { PackagesComponent } from '../../components/packages/packages';
     ServicesComponent,
     FeaturesComponent,
     PackagesComponent,
+    ContactComponent,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
