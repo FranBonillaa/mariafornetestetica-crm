@@ -9,30 +9,48 @@
 
         <div class="grid grid-cols-2 gap-16">
             <div><!-- izquierda: info -->
-                <h3>Maria Fornet</h3>
-                <p>Centro de Estética</p>
-                <p>Pide tu cita por teléfono o WhatsApp. Estaré encantada de atenderte</p>
+                <h3 class="text-2xl font-bold text-[#2C2C2C]">Maria Fornet</h3>
+                <p class="text-[#B8965A] italic mt-1">Centro de Estética</p>
+                <p class="text-[#6B6B6B] text-sm mt-4">Pide tu cita por teléfono o WhatsApp. Estaré encantada de
+                    atenderte</p>
 
                 <!-- datos -->
-                <div>
-                    <span>TELÉFONO</span>
-                    <p>622 699 116</p>
+                <div class="mt-8 flex flex-col gap-4">
+                    <div class="flex flex-col">
+                        <span class="text-[#B8965A] text-xs tracking-widest">TELÉFONO</span>
+                        <p class="text-[#2C2C2C] text-sm mt-1">622 699 116</p>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[#B8965A] text-xs tracking-widest">DIRECCIÓN</span>
+                        <p class="text-[#2C2C2C] text-sm mt-1">Calle Botica 60</p>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[#B8965A] text-xs tracking-widest">HORARIO</span>
+                        <p class="text-[#2C2C2C] text-sm mt-1">Lunes-Viernes 10:00-14:00 y 16:00-20:00</p>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[#B8965A] text-xs tracking-widest">INSTAGRAM</span>
+                        <a href="https://www.instagram.com/mariafornetestetica/"
+                            class="text-[#2C2C2C] text-sm mt-1 hover:text-[#B8965A]">@mariafornetestetica</a>
+                    </div>
+
                 </div>
-                <div>
-                    <span>DIRECCIÓN</span>
-                    <p>Calle Botica 60</p>
-                </div>
-                <div>
-                    <span>HORARIO</span>
-                    <p>Lunes-Viernes 10:00-14:00 y 16:00-20:00</p>
-                </div>
-                <div>
-                    <span>INSTAGRAM</span>
-                    <a href="https://www.instagram.com/mariafornetestetica/"
-                        class="text-[#B8965A] hover:underline">@mariafornetestetica</a>
-                </div>
+
             </div>
-            <div><!-- derecha: formulario --></div>
+            <div><!-- derecha: formulario -->
+                <form>
+                    <input type="text" placeholder="Tu nombre">
+                    <input type="text" placeholder="Para contactarte">
+                    <select>
+                        <option>Selecciona un servicio...</option>
+                    </select>
+                    <textarea placeholder="Cuéntanos qué necesitas..."></textarea>
+                    <button type="submit">ENVIAR SOLICITUD</button>
+                </form>
+            </div>
         </div>
 
     </div>
