@@ -5,7 +5,6 @@
 -- ============================================================
 -- TABLES
 -- ============================================================
--- Usuarios del sistema (la dueña y futuras empleadas con acceso al CRM)
 CREATE TABLE users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(100) NOT NULL,
@@ -15,7 +14,6 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
--- Clientas del centro con sus datos de contacto e historial
 CREATE TABLE client (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(100) NOT NULL,
@@ -27,14 +25,12 @@ CREATE TABLE client (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
--- Categorías de servicios (Manos y Pies, Depilación, Tratamientos...)
 CREATE TABLE category (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   sort_order INT DEFAULT 0
 );
 
--- Servicios del centro con precio y duración, agrupados por categoría
 CREATE TABLE service (
   id SERIAL PRIMARY KEY,
   category_id INT REFERENCES category(id) ON DELETE
@@ -48,7 +44,6 @@ CREATE TABLE service (
     is_active BOOLEAN DEFAULT TRUE
 );
 
--- Citas reservadas por las clientas (fecha, hora y estado)
 CREATE TABLE appointment (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   client_id UUID REFERENCES client(id) ON DELETE
@@ -63,7 +58,6 @@ CREATE TABLE appointment (
     created_at TIMESTAMP DEFAULT NOW()
 );
 
--- Servicios realizados en cada cita (una cita puede tener varios servicios)
 CREATE TABLE appointment_service (
   id SERIAL PRIMARY KEY,
   appointment_id UUID REFERENCES appointment(id) ON DELETE CASCADE,
@@ -75,7 +69,6 @@ CREATE TABLE appointment_service (
     client_package_id UUID
 );
 
--- Bonos disponibles para la venta (ej: Bono 10 sesiones presoterapia)
 CREATE TABLE package (
   id SERIAL PRIMARY KEY,
   name VARCHAR(200) NOT NULL,
@@ -85,7 +78,6 @@ CREATE TABLE package (
   is_active BOOLEAN DEFAULT TRUE
 );
 
--- Servicios que incluye cada bono y cuántas sesiones de cada uno
 CREATE TABLE package_detail (
   id SERIAL PRIMARY KEY,
   package_id INT REFERENCES package(id) ON DELETE CASCADE,
@@ -95,7 +87,6 @@ CREATE TABLE package_detail (
     session_count INT NOT NULL DEFAULT 1
 );
 
--- Bonos comprados por cada clienta con el seguimiento de sesiones usadas
 CREATE TABLE client_package (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   client_id UUID REFERENCES client(id) ON DELETE CASCADE,
@@ -109,7 +100,6 @@ CREATE TABLE client_package (
     is_active BOOLEAN DEFAULT TRUE
 );
 
--- Registro de cada sesión consumida de un bono (cuándo y en qué cita)
 CREATE TABLE client_package_use (
   id SERIAL PRIMARY KEY,
   client_package_id UUID REFERENCES client_package(id) ON DELETE CASCADE,
@@ -122,7 +112,6 @@ CREATE TABLE client_package_use (
     used_date DATE DEFAULT CURRENT_DATE
 );
 
--- Registro de cobros (por cita suelta o por compra de bono)
 CREATE TABLE payment (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   client_id UUID REFERENCES client(id) ON DELETE
@@ -142,9 +131,6 @@ CREATE TABLE payment (
     paid_at TIMESTAMP DEFAULT NOW()
 );
 
--- ============================================================
--- ADDITIONAL FOREIGN KEY (appointment_service -> client_package)
--- ============================================================
 ALTER TABLE
   appointment_service
 ADD
@@ -163,7 +149,8 @@ VALUES
   ('Tratamientos Faciales', 3),
   ('Tratamientos Corporales', 4),
   ('Lifting de Pestañas', 5),
-  ('Bonos', 6);
+  ('Bonos', 6),
+  ('Tratamientos INDIBA', 7);
 
 -- ============================================================
 -- DATA: SERVICES — Manos y Pies (category_id = 1)
@@ -207,7 +194,7 @@ VALUES
   (2, 'Depilación ingles normales', 8.00),
   (2, 'Depilación ingles brasileñas', 12.00),
   (2, 'Depilación pubis completo', 14.00),
-  (2, 'Depilación perianal', NULL),
+  (2, 'Depilación perianal', 5.00),
   (2, 'Depilación glúteos', 8.00);
 
 -- ============================================================
@@ -248,6 +235,20 @@ INSERT INTO
 VALUES
   (5, 'Lifting de pestañas', 40.00),
   (5, 'Lifting de pestañas (promoción)', 36.00);
+
+-- ============================================================
+-- DATA: SERVICES — Tratamientos INDIBA (category_id = 7)
+-- ============================================================
+INSERT INTO
+  service (category_id, name, price, duration_min)
+VALUES
+  (7, 'INDIBA Facial', 80.00, NULL),
+  (7, 'INDIBA Piernas', 80.00, NULL),
+  (7, 'INDIBA Cartucheras', 60.00, 40),
+  (7, 'INDIBA Abdomen', 60.00, 40),
+  (7, 'INDIBA Pecho', 60.00, 40),
+  (7, 'INDIBA Glúteos', 60.00, 40),
+  (7, 'INDIBA Brazos', 60.00, 40);
 
 -- ============================================================
 -- DATA: PACKAGES
@@ -295,6 +296,54 @@ VALUES
     'Bono Probióticos 6 sesiones',
     '6 sesiones de Trat. Probióticos (Lab Biotics)',
     342.00,
+    6
+  ),
+  (
+    'Bono INDIBA Facial 3 sesiones',
+    '3 sesiones INDIBA Facial (70€/sesión)',
+    210.00,
+    3
+  ),
+  (
+    'Bono INDIBA Facial 6 sesiones',
+    '6 sesiones INDIBA Facial',
+    400.00,
+    6
+  ),
+  (
+    'Bono INDIBA Piernas 6 sesiones',
+    '6 sesiones INDIBA Piernas (70€/sesión)',
+    420.00,
+    6
+  ),
+  (
+    'Bono INDIBA Piernas 12 sesiones',
+    '12 sesiones INDIBA Piernas (65€/sesión)',
+    780.00,
+    12
+  ),
+  (
+    'Bono INDIBA Cartucheras 6 sesiones',
+    '6 sesiones INDIBA Cartucheras 40min (50€/sesión)',
+    300.00,
+    6
+  ),
+  (
+    'Bono INDIBA Pecho 6 sesiones',
+    '6 sesiones INDIBA Pecho 40min',
+    300.00,
+    6
+  ),
+  (
+    'Bono INDIBA Glúteos 6 sesiones',
+    '6 sesiones INDIBA Glúteos 40min',
+    300.00,
+    6
+  ),
+  (
+    'Bono INDIBA Brazos 6 sesiones',
+    '6 sesiones INDIBA Brazos 40min',
+    300.00,
     6
   );
 
@@ -418,8 +467,106 @@ WHERE
   p.name = 'Bono Probióticos 6 sesiones'
   AND s.name = 'Lab Biotics - Probiotics';
 
--- ============================================================
--- NOTE: price for 'Depilación perianal' is NULL
--- Update when confirmed:
--- UPDATE service SET price = XX.00 WHERE name = 'Depilación perianal';
--- ============================================================
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  3
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Facial 3 sesiones'
+  AND s.name = 'INDIBA Facial';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  6
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Facial 6 sesiones'
+  AND s.name = 'INDIBA Facial';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  6
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Piernas 6 sesiones'
+  AND s.name = 'INDIBA Piernas';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  12
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Piernas 12 sesiones'
+  AND s.name = 'INDIBA Piernas';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  6
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Cartucheras 6 sesiones'
+  AND s.name = 'INDIBA Cartucheras';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  6
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Pecho 6 sesiones'
+  AND s.name = 'INDIBA Pecho';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  6
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Glúteos 6 sesiones'
+  AND s.name = 'INDIBA Glúteos';
+
+INSERT INTO
+  package_detail (package_id, service_id, session_count)
+SELECT
+  p.id,
+  s.id,
+  6
+FROM
+  package p,
+  service s
+WHERE
+  p.name = 'Bono INDIBA Brazos 6 sesiones'
+  AND s.name = 'INDIBA Brazos';
