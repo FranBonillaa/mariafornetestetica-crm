@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, NgZone, inject } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +8,7 @@ import { Component, AfterViewInit } from '@angular/core';
 })
 export class NavbarComponent implements AfterViewInit {
   activeSection = 'inicio';
+  private zone = inject(NgZone);
 
   ngAfterViewInit(): void {
     const sections = ['inicio', 'servicios', 'bonos', 'contacto'];
@@ -16,7 +17,9 @@ export class NavbarComponent implements AfterViewInit {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            this.activeSection = entry.target.id;
+            this.zone.run(() => {
+              this.activeSection = entry.target.id;
+            });
           }
         });
       },
