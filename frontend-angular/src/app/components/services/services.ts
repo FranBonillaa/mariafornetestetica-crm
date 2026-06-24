@@ -1,6 +1,10 @@
 import { UpperCasePipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { ServicesData } from '../../services/services-data';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-services',
@@ -8,7 +12,7 @@ import { ServicesData } from '../../services/services-data';
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
-export class ServicesComponent {
+export class ServicesComponent implements AfterViewInit {
   private dataSvc = inject(ServicesData);
 
   categories = [
@@ -30,5 +34,19 @@ export class ServicesComponent {
   // Cambio de categoria
   setCategory(cat: string) {
     this.activeCategory = cat;
+  }
+
+  ngAfterViewInit() {
+    gsap.from('.service-card', {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.service-card',
+        start: 'top 80%',
+      },
+    });
   }
 }
