@@ -6,6 +6,7 @@ import { FeaturesComponent } from '../../components/features/features';
 import { PackagesComponent } from '../../components/packages/packages';
 import { ContactComponent } from '../../components/contact/contact';
 import { FooterComponent } from '../../components/footer/footer';
+import { ReviewsComponent } from '../../components/reviews/reviews';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { FooterComponent } from '../../components/footer/footer';
     PackagesComponent,
     ContactComponent,
     FooterComponent,
+    ReviewsComponent,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
