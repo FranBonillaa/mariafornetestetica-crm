@@ -9,58 +9,63 @@ export class ServicesData {
   // Todos los servicios actuales
   services = [
     // Manos y Pies
-    { category: 'Manos y Pies', name: 'Manicura', price: 10, image: this.PLACEHOLDER },
+    { category: 'Manos y Pies', name: 'Manicura', price: 10, image: '/images/manicura.jpg' },
     {
       category: 'Manos y Pies',
       name: 'Esmaltado semipermanente',
       price: 16,
-      image: this.PLACEHOLDER,
+      image: '/images/esmaltado_semipermanente.jpg',
     },
     {
       category: 'Manos y Pies',
       name: 'Esmaltado semipermanente con relleno',
       price: 25,
-      image: this.PLACEHOLDER,
+      image: '/images/esmaltado_semipermanente.jpg',
     },
     {
       category: 'Manos y Pies',
       name: 'Retirada semipermanente',
       price: 10,
-      image: this.PLACEHOLDER,
+      image: '/images/manicura.jpg',
     },
-    { category: 'Manos y Pies', name: 'Pedicura', price: 25, image: this.PLACEHOLDER },
+    { category: 'Manos y Pies', name: 'Pedicura', price: 25, image: '/images/pedicura.jpg' },
     {
       category: 'Manos y Pies',
       name: 'Pedicura + esmaltado semipermanente',
       price: 41,
-      image: this.PLACEHOLDER,
+      image: '/images/pedicura.jpg',
     },
     {
       category: 'Manos y Pies',
       name: 'Pedicura + esmaltado normal',
       price: 35,
-      image: this.PLACEHOLDER,
+      image: '/images/pedicura.jpg',
     },
     {
       category: 'Manos y Pies',
       name: 'Esmaltado semipermanente en pies',
       price: 16,
-      image: this.PLACEHOLDER,
+      image: '/images/esmalte_pies.jpg',
     },
     {
       category: 'Manos y Pies',
       name: 'Esmaltado normal en pies',
       price: 10,
-      image: this.PLACEHOLDER,
+      image: '/images/esmalte_pies.jpg',
     },
     {
       category: 'Manos y Pies',
       name: '1ª puesta uñas acrílicas',
       price: 35,
-      image: this.PLACEHOLDER,
+      image: '/images/unas_acrilicas.jpg',
     },
-    { category: 'Manos y Pies', name: 'Relleno de uñas', price: 25, image: this.PLACEHOLDER },
-    { category: 'Manos y Pies', name: 'Arreglo uña rota', price: 3, image: this.PLACEHOLDER },
+    {
+      category: 'Manos y Pies',
+      name: 'Relleno de uñas',
+      price: 25,
+      image: '/images/unas_acrilicas.jpg',
+    },
+    { category: 'Manos y Pies', name: 'Arreglo uña rota', price: 3, image: '/images/manicura.jpg' },
 
     // Depilación Facial y Corporal
     {
