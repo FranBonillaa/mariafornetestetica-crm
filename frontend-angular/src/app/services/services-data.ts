@@ -259,13 +259,13 @@ export class ServicesData {
       category: 'Lifting de Pestañas',
       name: 'Lifting de pestañas',
       price: 40,
-      image: this.PLACEHOLDER,
+      image: '/images/lifting_pestanas.jpg',
     },
     {
       category: 'Lifting de Pestañas',
       name: 'Lifting de pestañas (promoción)',
       price: 36,
-      image: this.PLACEHOLDER,
+      image: '/images/lifting_pestanas.jpg',
     },
     // Tratamientos INDIBA
     { category: 'Tratamientos INDIBA', name: 'INDIBA Facial', price: 80, image: '/images/indiba_facial.jpg' },
