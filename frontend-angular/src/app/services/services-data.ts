@@ -268,37 +268,37 @@ export class ServicesData {
       image: this.PLACEHOLDER,
     },
     // Tratamientos INDIBA
-    { category: 'Tratamientos INDIBA', name: 'INDIBA Facial', price: 80, image: this.PLACEHOLDER },
-    { category: 'Tratamientos INDIBA', name: 'INDIBA Piernas', price: 80, image: this.PLACEHOLDER },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Facial', price: 80, image: '/images/indiba_facial.jpg' },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Piernas', price: 80, image: '/images/indiba_corporal.jpg' },
     {
       category: 'Tratamientos INDIBA',
       name: 'INDIBA Cartucheras (40 min)',
       price: 60,
-      image: this.PLACEHOLDER,
+      image: '/images/indiba_cartucheras.jpg',
     },
     {
       category: 'Tratamientos INDIBA',
       name: 'INDIBA Abdomen (40 min)',
       price: 60,
-      image: this.PLACEHOLDER,
+      image: '/images/indiba_abdomen_pecho.jpg',
     },
     {
       category: 'Tratamientos INDIBA',
       name: 'INDIBA Pecho (40 min)',
       price: 60,
-      image: this.PLACEHOLDER,
+      image: '/images/indiba_abdomen_pecho.jpg',
     },
     {
       category: 'Tratamientos INDIBA',
       name: 'INDIBA Glúteos (40 min)',
       price: 60,
-      image: this.PLACEHOLDER,
+      image: '/images/indiba_gluteos.jpg',
     },
     {
       category: 'Tratamientos INDIBA',
       name: 'INDIBA Brazos (40 min)',
       price: 60,
-      image: this.PLACEHOLDER,
+      image: '/images/indiba_brazos.jpg',
     },
   ];
 }
