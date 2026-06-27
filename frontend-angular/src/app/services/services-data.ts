@@ -233,25 +233,25 @@ export class ServicesData {
       category: 'Tratamientos Corporales',
       name: 'Presoterapia',
       price: 10,
-      image: this.PLACEHOLDER,
+      image: '/images/presoterapia.jpg',
     },
     {
       category: 'Tratamientos Corporales',
       name: 'Presoterapia + masaje drenante (45 min)',
       price: 20,
-      image: this.PLACEHOLDER,
+      image: '/images/presoterapia.jpg',
     },
     {
       category: 'Tratamientos Corporales',
       name: 'Masaje relajante cuerpo completo 1h',
       price: 45,
-      image: this.PLACEHOLDER,
+      image: '/images/masaje_relajante.jpg',
     },
     {
       category: 'Tratamientos Corporales',
       name: 'Masaje relajante 30 min',
       price: 22,
-      image: this.PLACEHOLDER,
+      image: '/images/masaje_relajante.jpg',
     },
 
     // Lifting de Pestañas
