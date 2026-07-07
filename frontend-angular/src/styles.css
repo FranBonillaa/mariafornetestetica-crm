@@ -7,3 +7,10 @@
   --font-sans: 'Lato', sans-serif;
 }
 
+@media (min-width: 640px) and (max-width: 1023px) {
+  .about-maria-img {
+    object-position: 75% 30%;
+    max-height: 320px;
+  }
+}
+
