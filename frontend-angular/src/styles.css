@@ -7,10 +7,8 @@
   --font-sans: 'Lato', sans-serif;
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-  .about-maria-img {
-    object-position: 75% 30%;
-    max-height: 320px;
-  }
+swiper-container {
+  --swiper-navigation-color: #B8965A;
+  --swiper-pagination-color: #B8965A;
 }
 
