@@ -65,7 +65,12 @@ export class ServicesData {
       price: 25,
       image: '/images/unas_acrilicas.jpg',
     },
-    { category: 'Manos y Pies', name: 'Arreglo uña rota', price: 3, image: '/images/arreglo_una_rota.jpg' },
+    {
+      category: 'Manos y Pies',
+      name: 'Arreglo uña rota',
+      price: 3,
+      image: '/images/arreglo_una_rota.jpg',
+    },
 
     // Depilación Facial y Corporal
     {
@@ -188,49 +193,49 @@ export class ServicesData {
       category: 'Tratamientos Faciales',
       name: 'Higiene facial',
       price: 49.99,
-      image: '/images/higiene_facial.jpg',
+      //image: '/images/higiene_facial.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Collagen Booster',
       price: 90,
-      image: '/images/collagen_booster.jpg',
+      //image: '/images/collagen_booster.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Hyaluronic',
       price: 60,
-      image: '/images/hyaluronic.jpg',
+      //image: '/images/hyaluronic.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Glycolic + Vitamina C',
       price: 60,
-      image: '/images/glycolic_vitamina_c.jpg',
+      //image: '/images/glycolic_vitamina_c.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Tratamiento pieles grasas',
       price: 60,
-      image: '/images/tratamiento_pieles_grasas.jpg',
+      //image: '/images/tratamiento_pieles_grasas.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Lab Biotics - Probiotics',
       price: 60,
-      image: '/images/lab_biotics_probiotics.jpg',
+      //image: '/images/lab_biotics_probiotics.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Tratamiento despigmentante',
       price: 60,
-      image: '/images/tratamiento_despigmentante.jpg',
+      //image: '/images/tratamiento_despigmentante.jpg',
     },
     {
       category: 'Tratamientos Faciales',
       name: 'Bioceuticals - Tratamiento reparante',
       price: 60,
-      image: '/images/tratamiento_reparante.jpg',
+      //image: '/images/tratamiento_reparante.jpg',
     },
 
     // Tratamientos Corporales
