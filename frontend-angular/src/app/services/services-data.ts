@@ -189,54 +189,14 @@ export class ServicesData {
     },
 
     // Tratamientos Faciales
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Higiene facial',
-      price: 49.99,
-      //image: '/images/higiene_facial.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Collagen Booster',
-      price: 90,
-      //image: '/images/collagen_booster.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Hyaluronic',
-      price: 60,
-      //image: '/images/hyaluronic.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Glycolic + Vitamina C',
-      price: 60,
-      //image: '/images/glycolic_vitamina_c.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Tratamiento pieles grasas',
-      price: 60,
-      //image: '/images/tratamiento_pieles_grasas.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Lab Biotics - Probiotics',
-      price: 60,
-      //image: '/images/lab_biotics_probiotics.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Tratamiento despigmentante',
-      price: 60,
-      //image: '/images/tratamiento_despigmentante.jpg',
-    },
-    {
-      category: 'Tratamientos Faciales',
-      name: 'Bioceuticals - Tratamiento reparante',
-      price: 60,
-      //image: '/images/tratamiento_reparante.jpg',
-    },
+    { category: 'Tratamientos Faciales', name: 'Higiene facial', price: 49.99 },
+    { category: 'Tratamientos Faciales', name: 'Collagen Booster', price: 90 },
+    { category: 'Tratamientos Faciales', name: 'Hyaluronic', price: 60 },
+    { category: 'Tratamientos Faciales', name: 'Glycolic + Vitamina C', price: 60 },
+    { category: 'Tratamientos Faciales', name: 'Tratamiento pieles grasas', price: 60 },
+    { category: 'Tratamientos Faciales', name: 'Lab Biotics - Probiotics', price: 60 },
+    { category: 'Tratamientos Faciales', name: 'Tratamiento despigmentante', price: 60 },
+    { category: 'Tratamientos Faciales', name: 'Bioceuticals - Tratamiento reparante', price: 60 },
 
     // Tratamientos Corporales
     {
@@ -278,47 +238,12 @@ export class ServicesData {
       image: '/images/lifting_pestanas.jpg',
     },
     // Tratamientos INDIBA
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Facial',
-      price: 80,
-      //image: '/images/indiba_facial.jpg',
-    },
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Piernas',
-      price: 80,
-      //image: '/images/indiba_cartucheras.jpg',
-    },
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Cartucheras (40 min)',
-      price: 60,
-      //image: '/images/indiba_cartucheras.jpg',
-    },
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Abdomen (40 min)',
-      price: 60,
-      //image: '/images/indiba_abdomen_pecho.jpg',
-    },
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Pecho (40 min)',
-      price: 60,
-      //image: '/images/indiba_abdomen_pecho.jpg',
-    },
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Glúteos (40 min)',
-      price: 60,
-      //image: '/images/indiba_gluteos.jpg',
-    },
-    {
-      category: 'Tratamientos INDIBA',
-      name: 'INDIBA Brazos (40 min)',
-      price: 60,
-      //image: '/images/indiba_brazos.jpg',
-    },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Facial', price: 80 },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Piernas', price: 80 },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Cartucheras (40 min)', price: 60 },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Abdomen (40 min)', price: 60 },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Pecho (40 min)', price: 60 },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Glúteos (40 min)', price: 60 },
+    { category: 'Tratamientos INDIBA', name: 'INDIBA Brazos (40 min)', price: 60 },
   ];
 }
